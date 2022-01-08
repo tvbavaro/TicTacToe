@@ -1,0 +1,213 @@
+body {
+    display: flex;
+    height: 95vh;
+    background-color: #ececec;
+}
+
+.container {
+    margin: auto;
+    position: relative;
+    width: 500px;
+}
+
+.ticTacToe {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-height: 500px;
+    max-width: 500px;
+    transition: all 1s;
+}
+
+.element {
+    width: 29%;
+    aspect-ratio: 1;
+    border-radius: 25%;
+    margin: 8px;
+    border: none;
+    font-size: 72px;
+    font-weight: bold;
+    color: aqua;
+}
+
+.element-shadow {
+    box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5), 10px 10px 15px rgba(70, 70, 70, 0.12);
+}
+
+.element:hover {
+    background-color: rgb(230, 230, 230);
+}
+
+.element:active {
+    box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5), 10px 10px 15px rgba(70, 70, 70, 0.12), inset -10px -10px 15px rgba(255, 255, 255, 0.5), inset 10px 10px 15px rgba(70, 70, 70, 0.12);
+}
+
+.transition02s {
+    transition: all 0.2s;
+}
+
+.transition2s {
+    transition: all 2s;
+}
+
+.information {
+    font-family: sans-serif;
+    margin-bottom: 28px;
+    transition: all 1s;
+}
+
+.whose-step {
+    text-align: center;
+    font-size: 48px;
+    color: rgb(165, 165, 165);
+    transition: all 1s;
+}
+
+.score {
+    text-align: center;
+    font-size: 18px;
+    color: rgb(165, 165, 165);
+    font-family: sans-serif;
+    transition: all 1s;
+}
+
+.winner {
+    height: 136px;
+    border-radius: 35px;
+    margin-bottom: 28px;
+    text-align: center;
+    line-height: 136px;
+    color: white;
+    font-size: 68px;
+    opacity: 0;
+    font-weight: bold;
+    font-family: sans-serif;
+    transition: all 1s;
+}
+
+.modal-window {
+    position: absolute;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: 0px;
+    height: 900px;
+    border-radius: 25px;
+    text-align: center;
+    padding-top: 200px;
+    background-color: rgb(235, 235, 235);
+    opacity: 0;
+    box-sizing: border-box;
+    transition: all 1s;
+}
+
+.modal-animation {
+    opacity: 100%;
+}
+
+.container-opacity {
+    opacity: 0;
+}
+
+.modal-button {
+    width: 100px;
+    height: 50px;
+    margin: 35px 10px;
+    border-radius: 10px;
+    border: none;
+    font-weight: 900;
+    box-shadow: -3px -3px 7px rgb(255 255 255 / 75%), 3px 5px 7px rgb(70 70 70 / 20%);
+    border: 2px solid #ececec;
+    color: #858585;
+    transition: all 0.2s;
+}
+
+.modal-button:hover {
+    background-color: rgb(230, 230, 230);
+    font-size: 14px;
+}
+
+.modal-button:active {
+    box-shadow: -3px -3px 7px rgb(255 255 255 / 75%), 3px 5px 7px rgb(70 70 70 / 20%), inset -3px -3px 4px rgb(255 255 255 / 64%), inset 3px 3px 5px rgb(70 70 70 / 20%);
+}
+
+.h3 {
+    color: rgb(121, 121, 121);
+    font-family: sans-serif;
+    font-weight: 700;
+}
+
+.winner-cell {
+    background-color: rgb(250, 250, 250);
+    font-size: 72px;
+    animation-name: fontsize;
+    animation-duration: 0.5s;
+    animation-iteration-count: 2;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+}
+
+.winner-cell:hover {
+    background-color: rgb(250, 250, 250);
+}
+
+.have-winner {
+    box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5), 10px 10px 15px rgba(70, 70, 70, 0.12);
+    opacity: 100%;
+    color: aqua;
+}
+
+.transparent-font {
+    opacity: 0%;
+}
+
+@keyframes fontsize {
+    from {
+        font-size: 72px;
+    }
+    to {
+        font-size: 92px;
+    }
+}
+
+@keyframes fontsizeMobile {
+    from {
+        font-size: 52px;
+    }
+    to {
+        font-size: 72px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .container {
+        margin: 0;
+        max-width: 425px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .element {
+        width: 28%;
+    }
+    .winner {
+        font-size: 52px;
+        height: 110px;
+        line-height: 110px;
+        border-radius: 25px;
+    }
+    .winner-cell {
+        animation-name: fontsizeMobile;
+    }
+    .element {
+        font-size: 52px;
+    }
+    .whose-step {
+        font-size: 42px;
+    }
+    .score {
+        font-size: 16px;
+    }
+}
